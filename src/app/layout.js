@@ -7,15 +7,6 @@ import { BottomNav } from "@/components/navbar";
 import { Suspense } from "react";
 import { LoadingSpinner } from "@/components/loadingSpinner";
 import ErrorBoundary from "@/components/errorBoundary";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "NITP",
@@ -26,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={``}
       >
         <Topbar />
         <div className="sticky top-0 bg-white shadow-md z-[100]">
@@ -34,9 +25,9 @@ export default function RootLayout({ children }) {
           <BottomNav />
         </div>
         <ErrorBoundary >
-        <Suspense fallback={<>Loading...</>} />
-        {children}
-        <Suspense />
+          <Suspense fallback={<>Loading...</>} />
+          {children}
+          <Suspense />
         </ErrorBoundary>
         <Footer />
       </body>

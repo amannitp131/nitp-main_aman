@@ -1,0 +1,59 @@
+import React from "react";
+import DeptartmentCounter from "@/components/department/counter";
+
+const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
+
+const counts = [
+  {
+    name: "Students",
+    icon: "/students_icon.png",
+    count: 456,
+  },
+  {
+    name: "Faculty",
+    icon: "/faculty_icon.png",
+    count: 25,
+  },
+  {
+    name: "Journal",
+    icon: "/journal_icon.png",
+    count: 25,
+  },
+  {
+    name: "Conferences",
+    icon: "/conference_icon.png",
+    count: 78,
+  },
+  {
+    name: "Projects",
+    icon: "/projects_icon.png",
+    count: 49,
+  },
+  {
+    name: "Research",
+    icon: "/research_icon.png",
+    count: 123,
+  },
+];
+
+const CSEPage = () => {
+  return (
+    <div className="bg-white">
+      <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
+        Computer Science And Engineering
+      </h2>
+
+      <div className="mt-2 w-[80%] mx-auto py-5 text-justify text-black">
+        {about.split("\n").map((line, index) => (
+          <p key={index} className="mb-2">
+            {line}
+          </p>
+        ))}
+      </div>
+
+      <DeptartmentCounter counts={counts} />
+    </div>
+  );
+};
+
+export default CSEPage;
