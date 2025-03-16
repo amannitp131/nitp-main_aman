@@ -1,5 +1,6 @@
 import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Electronics and Communication Engineering at the National Institute of Technology Patna began its journey in 1978 with just 10 undergraduate students. The department is dedicated to providing quality education at both undergraduate (UG) and postgraduate levels. Currently, it offers the following programs:
 1. B.Tech in "Electronics & Communication Engineering" with an intake of 161.
@@ -57,6 +58,7 @@ const counts = [
 const ECEPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="ECE" />
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Electronics And Communication Engineering
       </h2>
@@ -69,7 +71,7 @@ const ECEPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };

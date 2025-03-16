@@ -208,7 +208,7 @@ export const BottomNav = () => {
         )}
       </nav>
 
-      <div className="md:hidden flex items-center justify-between bg-red-700 text-white px-4 py-3">
+      <div className="md:hidden flex items-center justify-end bg-red-700 text-white px-4 py-3">
         <button onClick={() => setSideMenuOpen(true)}>
           <Menu size={28} />
         </button>
@@ -366,7 +366,7 @@ function SubSidemenu({ item, closeSideMenu }) {
   );
 }
 
-const Dropdown = ({ title, items, icon, mobile = false }) => {
+export const Dropdown = ({ title, items, icon, mobile = false }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const dropdownRef = useRef(null);

@@ -1,5 +1,5 @@
-import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in "Thermal Turbo Machinery" and "Refrigeration, Air Conditioning and Heat Transfer". The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.
 
@@ -43,6 +43,8 @@ const counts = [
 const MEPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="ME" />
+
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Mechanical Engineering
       </h2>
@@ -55,7 +57,7 @@ const MEPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };

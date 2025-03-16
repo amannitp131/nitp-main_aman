@@ -1,5 +1,6 @@
 import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Civil Engineering is the oldest and vibrant department of the institute, which was established along with the inception of the Institute in the year 1924. The Institute was formerly known as the Bihar College of Engineering Patna, a constituent engineering college under Patna University, until 27thJan 2004. It was rechristened to National Institute of Technology Patna on 28th Jan 2004 as an Autonomous Institute under MHRD, Govt. of India.
 
@@ -43,6 +44,7 @@ const counts = [
 const CEPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="CE" />
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Civil Engineering
       </h2>
@@ -55,7 +57,7 @@ const CEPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };
