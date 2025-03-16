@@ -1,5 +1,6 @@
 import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
 
@@ -39,6 +40,7 @@ const counts = [
 const CSEPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="CSE" />
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Computer Science And Engineering
       </h2>
@@ -51,7 +53,7 @@ const CSEPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };

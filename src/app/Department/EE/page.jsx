@@ -1,5 +1,6 @@
 import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Electrical Engineering in National Institute of Technology Patna (Formerly known as Bihar College of Engineering) was established in 1945 under Patna University with an intake of 45 students leading to a Bachelor of Science (Engineering) degree of four-year duration. In the year 1978 AICTE approved Post Graduate (PG) course leading to M.Sc. (Engg.) Degree in two specializations: (i) Power System Engineering and (ii) Control System Engineering. The department is also offering the Ph.D. research program since 2009.
 
@@ -43,6 +44,8 @@ const counts = [
 const EEPage = () => {
   return (
     <div className="bg-white">
+            <DeptNavbar dept="EE" />
+
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Electrical Engineering
       </h2>
@@ -55,7 +58,7 @@ const EEPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };

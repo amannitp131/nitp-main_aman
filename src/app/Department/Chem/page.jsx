@@ -1,5 +1,6 @@
 import React from "react";
-import DeptartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Chemistry department was established in 1924, at the same time the institute was founded. The Department has expanded significantly since 2014 and offers several compulsory and elective courses to B.Tech. and B.Arch. students of the Institute in 1st, 2nd and 3rd years of the UG and UG-PG dual degree programs. The department has offered a UG-PG 5-year Integrated M.Sc. in Chemistry degree from 2015 where the curriculum offers students an excellent theoretical foundation in both traditional as well as contemporary areas of chemistry along with extensive hands on training in experiments. Several of the pass out students have cleared GATE and NET examinations and have pursued higher studies in Institutes of repute like IITs, NIT and IISER. Some of the students have received placements through Institute T&P in teaching institutes, banks and IT companies. From the academic session of 2023, the department has started a 5-year UG-PG program - B. Tech.-M. Tech. dual degree in Chemical Technology. The expected outcome of the curriculum is to promote R&D in Chemistry with technological advancements and equip students to contribute effectively for the enhancement of both industry and academia in the country.
 
@@ -43,6 +44,7 @@ const counts = [
 const ChemPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="Chem" />
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Chemical Science and Technology
       </h2>
@@ -55,7 +57,7 @@ const ChemPage = () => {
         ))}
       </div>
 
-      <DeptartmentCounter counts={counts} />
+      <DepartmentCounter counts={counts} />
     </div>
   );
 };

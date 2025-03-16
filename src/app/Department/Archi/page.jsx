@@ -1,5 +1,6 @@
 import React from "react";
-import DepartmentCounter from "@/components/department/counter";
+import DepartmentCounter from "@/components/department/DeptCounter";
+import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `
 The Department of Architecture was established in the Bihar College of Engineering (BCE) Patna in the year 1979 under Patna University. It was the first time that architectural education had commenced in Bihar. When BCE Patna was rechristened as National Institute of Technology Patna on 28th January 2004, it came under the control of Ministry of Human Resource Development (MHRD), Government of India. The Department of Architecture and Planning offers programmes in Bachelor of Architecture (B.Arch.), Master of Urban and Regional Planning (MURP), Master of Architecture (Sustainable Architecture) and Ph.D. in Architecture and Planning.
@@ -45,6 +46,7 @@ const counts = [
 const ArchiPage = () => {
   return (
     <div className="bg-white">
+      <DeptNavbar dept="Archi" />
       <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
         Architecture & Planning
       </h2>
