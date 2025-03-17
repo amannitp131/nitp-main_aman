@@ -36,7 +36,7 @@ const ConferencePapers = ({ data }) => {
                   <p className="text-gray-800">
                     <span className="font-semibold">{paper.authors}</span>,{" "}
                     <span className="font-semibold text-blue-700">
-                      "{paper.title}"
+                    &quot;{paper.title}&quot;
                     </span>
                     ,
                     <span className="text-gray-700 text-lg font-bold">

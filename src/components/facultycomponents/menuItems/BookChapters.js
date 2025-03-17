@@ -34,12 +34,12 @@ const BookChapters = ({ data }) => {
                   <p className="text-gray-800">
                     Book Chapter,
                     <span className="font-semibold text-blue-700">
-                      "{chapter.chapter_title}{" "}
-                      <span className="text-gray-700">
-                        ({chapter.book_title}
-                      </span>
-                      )"
-                    </span>
+  &quot;{chapter.chapter_title}&quot;{" "}
+  <span className="text-gray-700">
+    ({chapter.book_title})
+  </span>
+</span>
+
                     <span className="text-gray-800 font-semibold">
                       {" "}
                       ISBN: {chapter.isbn},
