@@ -43,9 +43,7 @@ export default function Home() {
       <section className="rounded-2xl p-4 hidden xl:flex ring-rose-700 ">
         <Gallery />
       </section>
-      <footer className="w-full h-[300px] md:h-[50vh] bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: "url('/footerimage.png')" }}
-      ></footer>
+      
     </div>
   );
 }
