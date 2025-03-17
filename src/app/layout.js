@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
+import Imagefooter from "@/components/Imagefooter";
 import { Topbar } from "@/components/navbar";
 import { Middle } from "@/components/navbar";
 import { BottomNav } from "@/components/navbar";
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           {children}
           <Suspense />
         </ErrorBoundary>
+        <Imagefooter />
         <Footer />
       </body>
     </html>
