@@ -97,7 +97,7 @@ export const Middle = () => {
         isScrolled ? "backdrop-blur-lg bg-white/60" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-1">
         {/* mobile */}
         <div className="flex md:hidden items-center justify-between w-full">
           <Link href="/">
@@ -137,16 +137,17 @@ export const Middle = () => {
           </div>
 
           <Link href="/">
-            <div
-              className={`overflow-hidden transition-all duration-500 ease-in-out
-        ${isScrolled ? "h-16 w-16" : "h-24 w-24"}`}
-            >
-              <img
-                src="/nitp-logo.svg"
-                alt="NIT PATNA"
-                className="h-full w-full"
-              />
-            </div>
+            <Image
+              src={"/nitp-logo.svg"}
+              alt="NIT PATNA"
+              width={90}
+              height={90}
+              className={`transition-transform duration-300 hover:scale-110 m-2 ${
+                isScrolled
+                  ? "scale-75 -translate-y-1 "
+                  : "scale-105 translate-y-0 border-rose-700"
+              }`}
+            />
           </Link>
 
           <div className="text-center text-gray-800 transition-all duration-500 ease-in-out">
