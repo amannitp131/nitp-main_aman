@@ -14,10 +14,11 @@ const President = () => {
                         src="https://i.postimg.cc/wBxrhY30/Dharmendra-Pradhan.webp"
                         alt="Education minister"
                     />
-                    <p className="mt-4 text-gray-500 italic">Hon'ble Education Minister</p>
+                    <p className="mt-4 text-gray-500 italic">Hon&apos;ble Education Minister</p>
+                    <p className="mt-4 text-gray-500 italic">Hon&apos;ble Education Minister</p>
                     <h2 className="mt-2 text-xl font-semibold text-gray-800">Shri Dharmendra Pradhan</h2>
                     <p classname="mt-1 text-sm text-gray-600">
-                        Hon'ble Union Cabinet Minister, MoE, GoI
+                        Hon&apos;ble Union Cabinet Minister, MoE, GoI
                         <br />
                         Chairman, Council of NITs
                     </p>

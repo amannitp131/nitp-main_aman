@@ -69,36 +69,35 @@ import {
 
 const getNavItems = (dept) => {
   return [
-    { name: "Home", url: "/", icon: <Home size={20} /> },
+    { name: "Home", url: `/Department/${dept}`, icon: <Home size={20} /> },
     {
       name: "About",
       icon: <Landmark size={18} />,
-      url: `#`,
-
+      url: "#",
       dropdown: [
         {
-          name: "About Your Deptartment",
-          url: `${dept}/About`,
+          name: "About Your Department",
+          url: `/Department/${dept}/About`,
           icon: <Scroll size={18} />,
         },
         {
           name: "Vision",
-          url: `${dept}/Vision`,
+          url: `/Department/${dept}/Vision`,
           icon: <FileText size={18} />,
         },
         {
           name: "Mission",
-          url: `${dept}/Mission`,
+          url: `/Department/${dept}/Mission`,
           icon: <Building size={18} />,
         },
         {
           name: "PO & PEO",
-          url: `${dept}/PO`,
+          url: `/Department/${dept}/PO`,
           icon: <BookOpen size={18} />,
         },
         {
           name: "UG & PG",
-          url: `${dept}/UGPG`,
+          url: `/Department/${dept}/UGPG`,
           icon: <BookOpen size={18} />,
         },
       ],
@@ -106,22 +105,21 @@ const getNavItems = (dept) => {
     {
       name: "People",
       icon: <Landmark size={18} />,
-      url: `#`,
-
+      url: "#",
       dropdown: [
         {
           name: "Faculty",
-          url: `${dept}/Faculty`,
+          url: `/Department/${dept}/Faculty`,
           icon: <Scroll size={18} />,
         },
         {
           name: "Staff",
-          url: `${dept}/Staff`,
+          url: `/Department/${dept}/Staff`,
           icon: <FileText size={18} />,
         },
         {
           name: "Research Students",
-          url: `${dept}/ResearchStudents`,
+          url: `/Department/${dept}/ResearchStudents`,
           icon: <Building size={18} />,
         },
       ],
@@ -130,31 +128,30 @@ const getNavItems = (dept) => {
       name: "Research",
       icon: <Landmark size={18} />,
       url: "#",
-
       dropdown: [
         {
-          name: "Journel",
-          url: `${dept}/Journel`,
+          name: "Journal",
+          url: `/Department/${dept}/Journal`,
           icon: <Scroll size={18} />,
         },
         {
           name: "Conference",
-          url: `${dept}/Conference`,
+          url: `/Department/${dept}/Conference`,
           icon: <FileText size={18} />,
         },
         {
           name: "Patents",
-          url: `${dept}/Patents`,
+          url: `/Department/${dept}/Patents`,
           icon: <Building size={18} />,
         },
         {
           name: "Projects",
-          url: `${dept}/Projects`,
+          url: `/Department/${dept}/Projects`,
           icon: <Building size={18} />,
         },
         {
           name: "Research Group",
-          url: `${dept}/ResearchGroup`,
+          url: `/Department/${dept}/ResearchGroup`,
           icon: <Building size={18} />,
         },
       ],
@@ -163,26 +160,25 @@ const getNavItems = (dept) => {
       name: "Academics",
       icon: <Landmark size={18} />,
       url: "#",
-
       dropdown: [
         {
           name: "B.Tech",
-          url: `${dept}/B.Tech`,
+          url: `/Department/${dept}/B.Tech`,
           icon: <Scroll size={18} />,
         },
         {
           name: "M.Tech",
-          url: `${dept}/M.Tech`,
+          url: `/Department/${dept}/M.Tech`,
           icon: <FileText size={18} />,
         },
         {
           name: "Dual Degree",
-          url: `${dept}/DualDegree`,
+          url: `/Department/${dept}/DualDegree`,
           icon: <Building size={18} />,
         },
         {
           name: "Ph.D.",
-          url: `${dept}/Ph.D.`,
+          url: `/Department/${dept}/Ph.D.`,
           icon: <Building size={18} />,
         },
       ],
@@ -191,7 +187,6 @@ const getNavItems = (dept) => {
       name: "All Departments",
       icon: <Landmark size={18} />,
       url: "#",
-
       dropdown: [
         {
           name: "Applied Physics and Materials Engineering",
@@ -252,6 +247,5 @@ const getNavItems = (dept) => {
     },
   ];
 };
-
 
 export default getNavItems;
