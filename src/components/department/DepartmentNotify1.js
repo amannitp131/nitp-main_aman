@@ -1,53 +1,30 @@
 import { useEffect, useState } from "react";
 
-function DepartmentNotify1(props) {
-    const link = props.link ? JSON.parse(props.link).url : '';
+function DepartmentNotify1({ title, link, important, attachments, date }) {
+    const parsedLink = link ? JSON.parse(link).url : "";
+    const [textCol, setTextCol] = useState("black");
     const color = ["yellow-700", "black"];
-    const [textCol, settextCol] = useState("black");
     let flag = 0;
 
     useEffect(() => {
         const interval = setInterval(() => {
             flag = flag === 0 ? 1 : 0;
-            settextCol(color[flag]);
+            setTextCol(color[flag]);
         }, 1000);
-        
         return () => clearInterval(interval);
     }, []);
 
-    if (link && link.length > 5) {
-        return (
-            <div>
-                <a href={link} className={`${(props.important === 1) ? `text-${textCol}` : ""} my-1 font-semibold text-[14px] flex text-start hover:text-blue-500`}>
-                    <div className="flex items-center">
-                        <div className="border rounded-full bg-black h-[10px] w-[10px] mr-2"></div>
-                        {props.title}
-                    </div>
-                </a>
-                {/* Attachments rendering logic can go here */}
-            </div>
-        );
-    }
-    
     return (
-        <div className="my-1 flex text-start">
-            <div className="flex items-center">
-                <div className={`${(props.important === 1) ? `text-${textCol}` : ""} border rounded-full bg-black h-[10px] w-[10px] mr-2`}></div>
-                {props.title}
-            </div>
+        <div className="pb-3 border-b">
+            <span className="text-sm text-gray-500">{new Date(date).toDateString()}</span>
+            <p className={`font-medium ${(important === 1) ? `text-${textCol}` : ""}`}>
+                {parsedLink && parsedLink.length > 5 ? (
+                    <a href={parsedLink} className="hover:text-blue-500">{title}</a>
+                ) : (
+                    title
+                )}
+            </p>
         </div>
-    );
-}
-
-function AttachmentsCompo(props) {
-    const link = props.link;
-    return (
-        <a href={link} className={`${(props.important === 1) ? `text-${textCol}` : ""} my-1 font-semibold text-[14px] flex text-start hover:text-blue-500`} target="_blank">
-            <div className="flex items-center">
-                <div className="border rounded-full bg-black h-[10px] w-[10px] mr-2"></div>
-                {props.title}
-            </div>
-        </a>
     );
 }
 
