@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import loadingSpinner from "../../../components/loadingSpinner";
+import { LoadingSpinner } from "../../../components/loadingSpinner";
 
 const FacultyCard = dynamic(
     () => import("../../../components/faculty/Facultycard"),
     {
         loading: () => (
             <div className="w-[100%] h-[100%] m-4 p-4 bg-[grey]">
-                <loadingSpinner />
+                <LoadingSpinner />
             </div>
         ),
     }
@@ -38,7 +38,7 @@ const FacultyList = () => {
     if (loading) {
         return (
             <div>
-                <loadingSpinner />
+                <LoadingSpinner />
             </div>
         )
     }
