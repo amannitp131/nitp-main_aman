@@ -10,11 +10,9 @@ export const ProgramCard = ({ item }) => {
           {item.degree}
           <br />({item.duration} Years)
         </h3>
-        <h3>
-          {item.specialization.map((it, index) => (
-            <h3 key={index}>{it}</h3>
-          ))}
-        </h3>
+        {item.specialization.map((it, index) => (
+          <h3 key={index}>{it}</h3>
+        ))}
       </div>
       <hr />
       <div className="mb-2">
@@ -31,7 +29,7 @@ export const ProgramCard = ({ item }) => {
 };
 
 const AcadProgram = ({ acadProgrammes }) => {
-  console.log(acadProgrammes);
+  // console.log(acadProgrammes);
   return (
     <div className="text-lg text-black px-5 justify-between text-justify py-5 flex gap-5 flex-wrap">
       {acadProgrammes.map((item, index) => {

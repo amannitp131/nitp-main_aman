@@ -1,14 +1,7 @@
-"use client";
-import React from "react";
 import DepartmentCounter from "@/components/department/DeptCounter";
-import AcadProgram from "@/components/department/AcadProgram";
-import AboutDept from "@/components/department/AboutDept";
-import DeptPic from "@/components/department/DeptPic";
-import DeptNotice from "@/components/department/DeptNotice";
+import React from "react";
 
 const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
-
-const pictures = ["", "", ""];
 
 const counts = [
   {
@@ -67,73 +60,29 @@ const counts = [
   },
 ];
 
-const AcadProgrammes = [
-  {
-    name: "Under Graduate",
-    degree: "B.Tech",
-    duration: `4`,
-    specialization: ["CSE"],
-    timeTableLink: "",
-    syllabusLink: "",
-  },
-  {
-    name: "Dual Degree",
-    degree: "Integrated B.Tech and M.Tech",
-    duration: `5`,
-    specialization: ["Cyber Security", "Data Science"],
-    timeTableLink: "",
-    syllabusLink: "",
-  },
-  {
-    name: "Post Graduate",
-    degree: "M.Tech",
-    duration: `2`,
-    specialization: ["CSE"],
-    timeTableLink: "",
-    syllabusLink: "",
-  },
-  {
-    name: "Ph.D.",
-    degree: "Post Doctrate",
-    duration: `5+`,
-    specialization: ["CSE"],
-    timeTableLink: "",
-    syllabusLink: "",
-  },
-];
-
-const CSEPage = () => {
+const Aboutpage = () => {
   return (
     <div className="">
-      {/* Department Picture and Notice */}
-      <div className="flex flex-row w-[80%] h-[420px] mx-auto flex-1 shrink-0 mt-5">
-        <DeptPic pictures={pictures} />
-        <DeptNotice dept="CSE" />
-      </div>
-
       {/* About the department */}
       <div className="py-1 mt-2">
-        <div className="flex flex-col lg:flex-row w-full px-5 xs:px-0 md:w-[90%] lg:w-[80%] mx-auto">
-          <AboutDept about={about} />
-
+        <div className="w-full px-5 xs:px-0 md:w-[90%] lg:w-[80%] mx-auto">
+          <div className="w-full">
+            <h2 className="text-center text-4xl text-red-700 mt-2">
+              About The Department
+            </h2>
+            <div className="w-[100%] mx-auto px-2 py-5 text-justify text-black">
+              {about.split("\n").map((line, index) => (
+                <p key={index} className="mb-2">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
           <DepartmentCounter counts={counts} />
         </div>
       </div>
-
-      {/* Academic Programmes */}
-      <div className="py-1 mt-2">
-        <h2 className="text-center w-[80%] mx-auto text-4xl text-red-700 mb-2">
-          Academic Programmes
-        </h2>
-        <div className="w-[80%] mx-auto">
-          <AcadProgram acadProgrammes={AcadProgrammes} />
-        </div>
-      </div>
-
-      {/* Vision And Mission */}
-      <div></div>
     </div>
   );
 };
 
-export default CSEPage;
+export default Aboutpage;
