@@ -1,32 +1,27 @@
 "use client";
 import axios from "axios";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DepartmentNotify1 from "./DepartmentNotify1";
+// import { Button } from "@/components/ui/button";
 
 const DeptNotice = ({ dept }) => {
   const [Notices, setNotices] = useState([]);
+
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-        `${
-          process.env.NEXT_PUBLIC_BACKEND_API_URL
-        }/api/notice?type=${dept.toLowerCase()}`
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/notice?type=${dept.toLowerCase()}`
       );
-      console.log(response.data);
       setNotices(response.data);
     };
     getData();
-  }, []);
+  }, [dept]);
 
   return (
     <div className="w-full flex flex-col mr-4 max-sm:mr-0">
-      <div className="bg-white rounded-lg shadow-lg px-4 h-full overflow-y-auto border border-red-200">
-        <div className="flex justify-between mb-4 text-lg font-semibold text-slate-500">
-          <div>Announcement</div>
-          <button className="hover:text-blue-500">View All</button>
-        </div>
-        <div className="overflow-hidden flex flex-col">
+      <div className="bg-white rounded-lg shadow-md p-6 py-2 border border-red-200">
+        <h2 className="text-2xl font-bold text-[#5D1A14] mb-4">Announcements</h2>
+        <ul className="space-y-3 overflow-y-auto max-h-80">
           {Notices.map((notice, id) => {
             if (notice.isVisible === 1) {
               return (
@@ -36,11 +31,19 @@ const DeptNotice = ({ dept }) => {
                   attachments={notice.attachments}
                   important={notice.important}
                   link={notice.notice_link ? notice.notice_link : ""}
+                  date={notice.updatedAt}
                 />
               );
             }
+            return null;
           })}
-        </div>
+        </ul>
+        <button
+          variant="outline"
+          className="mt-4 text-[#8B3A32] border-[#8B3A32] hover:bg-[#F8F0EE] hover:text-[#5D1A14]"
+        >
+          View All Annoncements
+        </button>
       </div>
     </div>
   );

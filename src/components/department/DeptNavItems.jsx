@@ -72,13 +72,13 @@ const getNavItems = (dept) => {
     { name: "Home", url: `/Department/${dept}`, icon: <Home size={20} /> },
     {
       name: "About",
-      icon: <Landmark size={18} />,
+      icon: <BookOpen size={18} />,
       url: "#",
       dropdown: [
         {
           name: "About Your Department",
           url: `/Department/${dept}/About`,
-          icon: <Scroll size={18} />,
+          icon: <BookOpen size={18} />,
         },
         {
           name: "Vision",
@@ -104,7 +104,7 @@ const getNavItems = (dept) => {
     },
     {
       name: "People",
-      icon: <Landmark size={18} />,
+      icon: <Users size={18} />,
       url: "#",
       dropdown: [
         {
@@ -126,7 +126,7 @@ const getNavItems = (dept) => {
     },
     {
       name: "Research",
-      icon: <Landmark size={18} />,
+      icon: <FileText size={18} />,
       url: "#",
       dropdown: [
         {
@@ -158,7 +158,7 @@ const getNavItems = (dept) => {
     },
     {
       name: "Academics",
-      icon: <Landmark size={18} />,
+      icon: <Award size={18} />,
       url: "#",
       dropdown: [
         {
