@@ -174,7 +174,7 @@ export const navItems = [
         },
         {
           name: "Chief Proctor",
-          url: "/Administration/Proctorial_Board/cheif-proctor",
+          url: "/Administration/Proctorial_Board/chief-proctor",
           icon: <ShieldCheck size={18} />,
         },
         {
