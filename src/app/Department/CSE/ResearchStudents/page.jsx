@@ -43,7 +43,7 @@ const CSEReserchStudentspage = () => {
 
   useEffect(() => {
     fetchPhd();
-    console.log(phd);
+    // console.log(phd);
   }, []);
 
   const completedStatuses = ["Awarded", "Completed"];
