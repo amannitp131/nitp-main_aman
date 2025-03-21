@@ -139,12 +139,12 @@ export const navItems = [
         },
         {
           name: "NITs Councils",
-          url: "/Administration/NITs_Councils",
+          url: "/Administration/CONIT",
           icon: <Users size={18} />,
         },
         {
           name: "Board of Governors",
-          url: "/Administration/Board_of_Governers",
+          url: "/Administration/BOG",
           icon: <Landmark size={18} />,
         },
         {
@@ -174,7 +174,7 @@ export const navItems = [
         },
         {
           name: "Chief Proctor",
-          url: "/Administration/Proctorial_Board/chief-proctor",
+          url: "/Administration/Proctorial_Board/cheif-proctor",
           icon: <ShieldCheck size={18} />,
         },
         {
