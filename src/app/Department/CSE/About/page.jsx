@@ -12,7 +12,7 @@ const counts = [
   { name: "Journal", icon: <FileText size={40} />, count: "25+" },
   { name: "Conferences", icon: <Award size={40} />, count: "78+" },
   { name: "Projects", icon: <Briefcase size={40} />, count: "49+" },
-  { name: "Research", icon: <BarChart2 size={40} />, count: "123+" },
+  { name: "Book", icon: <BookOpen size={40} />, count: "123+" },
   { name: "Patents", icon: <BarChart2 size={40} />, count: "123+" },
 ];
 

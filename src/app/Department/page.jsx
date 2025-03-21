@@ -82,7 +82,7 @@ const DepartmentPage = () => {
               className="w-full sm:w-64 md:w-72 lg:w-80 bg-white rounded-md px-5 py-5 hover:border-2 border-red-700 shadow-2xl flex flex-col items-center"
             >
               <Link href={`Department/${dept.link}`} className="w-full">
-                <div className="h-48 w-48 rounded-full bg-red-700 flex items-center justify-center mx-auto overflow-hidden">
+                <div className="h-48 w-48 rounded-sm flex items-center justify-center mx-auto overflow-hidden">
                   <img src={`${dept.icon}`} alt={`${dept.icon}`} className="w-full" />
                 </div>
                 <h2 className="text-center text-xl text-red-700 mt-3">

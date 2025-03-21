@@ -28,7 +28,7 @@ const CSEFacultyPage = () => {
       {faculty && hasFaculty && (
         <div className="flex flex-col">
           <p className="text-red-900 text-xl lg:text-3xl font-bold text-center">FACULTY</p>
-          <FacultyList url={"/Department/CSE/faculty"} branch={"cse"} />
+          <FacultyList url={"/Department/CSE/Faculty"} branch={"cse"} />
         </div>
       )}
     </div>
