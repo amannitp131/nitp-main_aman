@@ -37,7 +37,7 @@ const DeptNavbar = ({ dept }) => {
   return (
     <>
       <nav
-        className={`bg-red-700 w-[80%] text-white backdrop-blur-xl xl:px-6 ${
+        className={`bg-red-700 w-[90%] xl:w-[80%] text-white backdrop-blur-xl xl:px-6 ${
           isScrolled
             ? "py-1 transition-transform duration-500"
             : "py-2 transition-transform duration-500"

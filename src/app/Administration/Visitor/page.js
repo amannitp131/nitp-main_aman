@@ -24,7 +24,7 @@ const President = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Hon'ble President of India
+                            Hon&apos;ble President of India
                         </a>
                     </div>
                 </div>

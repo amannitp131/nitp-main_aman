@@ -2,9 +2,6 @@ import DepartmentCounter from "@/components/department/DeptCounter";
 import DeptNavbar from "@/components/department/DeptNavbar";
 
 const about = `The Department of Mechanical Engineering was established in 1952 with B. Tech program during the era of Bihar College of Engineering (BCE) which is well-known since 1924 as the sixth oldest Engineering College in India. In 1978, M. Tech Program was started with specializations in "Thermal Turbo Machinery" and "Refrigeration, Air Conditioning and Heat Transfer". The Bihar College of Engineering was converted to National Institute of Technology Patna in 2004.
-
-Initially, B.Tech program was started with intake of 20 which has now become 131. M.Tech program is running with a total intake of around 50 for all specializations and the 5 years Dual Degree (B.Tech + M.Tech) program is executing with an intake of 24, whereas, over 200 students are performing research in various fields of Mechanical Engineering in the Ph.D. program. Some prominent research topics in the department are Materials, solid mechanics, product design, manufacturing processes, thermodynamics, heat transfer, gas dynamics, renewable energy, surface engineering, dynamics and control, fluid power systems and operation management.
-
 The Department has an excellent industrial interaction and contributes to the industry by offering consultancy services and sponsored research projects. Continuously growing numbers of patents and publications in various top multidisciplinary journals is indication of the thriving research environment in the department`;
 
 const counts = [

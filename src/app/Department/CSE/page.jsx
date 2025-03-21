@@ -1,59 +1,93 @@
+"use client";
 import React from "react";
 import DepartmentCounter from "@/components/department/DeptCounter";
-import DeptNavbar from "@/components/department/DeptNavbar";
+import AcadProgram from "@/components/department/AcadProgram";
+import AboutDept from "@/components/department/AboutDept";
+import DeptPic from "@/components/department/DeptPic";
+import DeptNotice from "@/components/department/DeptNotice";
+import { Users, BookOpen, FileText, Award, Briefcase, BarChart2 } from "lucide-react";
 
 const about = `The Department of Computer Science and Engineering offers courses leading to Bachelor of Technology in Computer Science and Engineering. The department has a very good infrastructure and faculty to provide excellent education. The curriculum is updated regularly to keep up with the growing demands and the changing trends of the software industry and research laboratories. The department provides a wide range of courses. The prominent among them includes Data Structures, Design and Analysis of Algorithms, System Programming, Computer Networks, Data Mining and Warehousing, Distributed and Parallel Computing, Mobile and Wireless Computing, Real-time Systems, Cryptography, Genetic Algorithm, Quantum Algorithms and Artificial Intelligence. Apart from these, students are also offered a wide variety of electives.`;
 
+const pictures = ["", "", ""];
+
 const counts = [
+  { name: "Undergraduate Students", icon: <Users size={40} />, count: "456+" },
+  { name: "Postgraduate Students", icon: <Users size={40} />, count: "123+" },
+  { name: "Ph.D. Students", icon: <Users size={40} />, count: "49+" },
+  { name: "Faculty", icon: <BookOpen size={40} />, count: "25+" },
+  { name: "Journal", icon: <FileText size={40} />, count: "25+" },
+  { name: "Conferences", icon: <Award size={40} />, count: "78+" },
+  { name: "Projects", icon: <Briefcase size={40} />, count: "49+" },
+  { name: "Research", icon: <BarChart2 size={40} />, count: "123+" },
+  { name: "Patents", icon: <BarChart2 size={40} />, count: "123+" },
+];
+
+const AcadProgrammes = [
   {
-    name: "Students",
-    icon: "/students_icon.png",
-    count: 456,
+    name: "Under Graduate",
+    degree: "B.Tech",
+    duration: `4`,
+    specialization: ["CSE"],
+    timeTableLink: "",
+    syllabusLink: "",
   },
   {
-    name: "Faculty",
-    icon: "/faculty_icon.png",
-    count: 25,
+    name: "Dual Degree",
+    degree: "Integrated B.Tech and M.Tech",
+    duration: `5`,
+    specialization: ["Cyber Security", "Data Science"],
+    timeTableLink: "",
+    syllabusLink: "",
   },
   {
-    name: "Journal",
-    icon: "/journal_icon.png",
-    count: 25,
+    name: "Post Graduate",
+    degree: "M.Tech",
+    duration: `2`,
+    specialization: ["CSE"],
+    timeTableLink: "",
+    syllabusLink: "",
   },
   {
-    name: "Conferences",
-    icon: "/conference_icon.png",
-    count: 78,
-  },
-  {
-    name: "Projects",
-    icon: "/projects_icon.png",
-    count: 49,
-  },
-  {
-    name: "Research",
-    icon: "/research_icon.png",
-    count: 123,
+    name: "Ph.D.",
+    degree: "Post Doctrate",
+    duration: `5+`,
+    specialization: ["CSE"],
+    timeTableLink: "",
+    syllabusLink: "",
   },
 ];
 
 const CSEPage = () => {
   return (
-    <div className="bg-white">
-      <DeptNavbar dept="CSE" />
-      <h2 className="text-center text-5xl mt-2 text-red-700 uppercase">
-        Computer Science And Engineering
-      </h2>
-
-      <div className="mt-2 w-[80%] mx-auto py-5 text-justify text-black">
-        {about.split("\n").map((line, index) => (
-          <p key={index} className="mb-2">
-            {line}
-          </p>
-        ))}
+    <div className="">
+      {/* Department Picture and Notice */}
+      <div className="flex flex-row w-[90%] h-[420px] mx-auto flex-1 shrink-0 mt-5">
+        <DeptPic pictures={pictures} />
+        <DeptNotice dept="CSE" />
       </div>
 
-      <DepartmentCounter counts={counts} />
+      {/* About the department */}
+      <div className="py-1 mt-2">
+        <div className="flex flex-col lg:flex-row w-full px-5 xs:px-0 md:w-[90%] lg:w-full mx-auto">
+          <AboutDept about={about} />
+
+          <DepartmentCounter counts={counts} />
+        </div>
+      </div>
+
+      {/* Academic Programmes */}
+      <div className="py-1 mt-2">
+        <h2 className="text-center w-[80%] mx-auto text-4xl text-red-700 mb-2">
+          Academic Programmes
+        </h2>
+        <div className="w-[80%] mx-auto">
+          <AcadProgram acadProgrammes={AcadProgrammes} />
+        </div>
+      </div>
+
+      {/* Vision And Mission */}
+      <div></div>
     </div>
   );
 };
