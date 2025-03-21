@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { LoadingSpinner } from "@/components/loadingSpinner";
 
-
 const BISdashboard = () => {
   const uri =
     "https://www.services.bis.gov.in/php/BIS_2.0/dgdashboard/Standards_master/get_academic_dashboard_banner_scroll_items/";
@@ -28,7 +27,7 @@ const BISdashboard = () => {
         }
 
         const result = await res.json();
-        // console.log("Fetched data:", result);
+        //  console.log("Fetched data:", result);
 
         if (
           result.status === "success" &&
@@ -57,11 +56,13 @@ const BISdashboard = () => {
       </h1>
 
       {loading ? (
-                <LoadingSpinner />
-              )  : error ? (
+        <LoadingSpinner />
+      ) : error ? (
         <div className="flex justify-center items-center">
           <div className="text-center">
-            <p className="text-red-500 text-lg">Sorry, Error Occurred - {error}.</p>
+            <p className="text-red-500 text-lg">
+              Sorry, Error Occurred - {error}.
+            </p>
             <p className="text-red-500 text-lg">Try Refreshing the Tab</p>
           </div>
         </div>
@@ -79,47 +80,54 @@ const BISdashboard = () => {
             </thead>
 
             <tbody>
-  {data.map((item, index) => (
-    <tr
-      key={index}
-      className="border-b border-gray-300 hover:bg-blue-100 hover:scale-[1.02] transition-transform duration-200"
-    >
-      <td className="px-4 py-2 text-left text-black">{index + 1}</td>
-      <td className="px-4 py-2 text-left text-black text-sm">{item.title}</td>
-      <td className="px-4 py-2 text-left text-black text-sm">{item.description}</td>
-      <td className="px-4 py-2 text-left text-black text-sm">{item.created_at}</td>
-      <td className="px-4 py-2 text-center text-neutral-300">
-        {item.url ? (
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold px-4 py-2 rounded-full shadow-md transition-all duration-300 hover:scale-105 hover:from-indigo-600 hover:to-blue-600 flex items-center justify-center gap-2 text-sm"
-          >
-            View
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
-        ) : (
-          "N/A"
-        )}
-      </td>
-    </tr>
-  ))}
-</tbody>
-
+              {data.map((item, index) => (
+                <tr
+                  key={index}
+                  className="border-b border-gray-300 hover:bg-blue-100 hover:scale-[1.02] transition-transform duration-200"
+                >
+                  <td className="px-4 py-2 text-left text-black">
+                    {index + 1}
+                  </td>
+                  <td className="px-4 py-2 text-left text-black text-sm">
+                    {item.title}
+                  </td>
+                  <td className="px-4 py-2 text-left text-black text-sm">
+                    {item.description}
+                  </td>
+                  <td className="px-4 py-2 text-left text-black text-sm">
+                    {item.created_at}
+                  </td>
+                  <td className="px-4 py-2 text-center text-neutral-300">
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold px-4 py-2 rounded-full shadow-md transition-all duration-300 hover:scale-105 hover:from-indigo-600 hover:to-blue-600 flex items-center justify-center gap-2 text-sm"
+                      >
+                        View
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    ) : (
+                      "N/A"
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       )}
