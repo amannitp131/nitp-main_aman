@@ -1,11 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-import "./style.css"
-
-
-
-
 const FacilitiesResources = [
   {
     "title": "Computer Centre",
