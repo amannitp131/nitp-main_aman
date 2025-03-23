@@ -1,6 +1,6 @@
 "use-client";
 import PeopleCard from "./PeopleCard";
-// import dean_img from "./Dean.png";
+
 import img1 from "./prabhat-kumar.png";
 
 export default function PeopleList() {
@@ -27,20 +27,7 @@ export default function PeopleList() {
 
   const other = [
     
-      // {
-      //   id: 1,
-      //   name: "Ritesh Kumar",
-      //   image: "",
-      //   designation: "Technical Assistant",
-      //   email: "",
-      // },
-      // {
-      //   id: 2,
-      //   name: "Paritosh Bhushan",
-      //   image: "",
-      //   designation: "Technical Assistant",
-      //   email: "",
-      // },
+      
       {
         id: 3,
         name: "Mr.  Coomar Kislay",
