@@ -4,6 +4,7 @@ import Image from 'next/image'; // Import Next.js Image component
 
 import "./style.css";
 
+
 const FacilitiesResources = [
   {
     title: "Computer Centre",
