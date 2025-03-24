@@ -432,51 +432,67 @@ export const navItems = [
     dropdown: [
       {
         name: "Hostel & Mess",
-        url: "/Facilities/Hostel",
+        url: "/Facilities/Hostel",  // This is already correct
         icon: <Hostel size={20} />,
       },
       {
         name: "Scholarship",
-        url: "/Student/Scholarship",
+        url: "/students/Scholarships",  // Changed from "/Student/Scholarship"
         icon: <Scholarship size={20} />,
       },
       {
         name: "Clubs/Socities",
-        url: "/Student/Clubs",
+        url: "/students/Clubs",  // Changed from "/Student/Clubs"
         icon: <Clubs size={20} />,
       },
       {
         name: "Anti Ragging",
-        url: "/Student/AntiRagging",
+        url: "/students/Antiragging",  // Changed from "/Student/AntiRagging"
         icon: <Notice size={20} />,
       },
       {
         name: "Fee Payment",
-        url: "https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466",
+        url: "https://paydirect.eduqfix.com/app/mnYv9Q6+C+3lIMqghRCwdaqVZusPrJtq2RGJrJFnKnmtz3KBqtsEFPVrZFvoPubG/3466",  // This is already correct
         icon: <Fee size={20} />,
       },
       {
         name: "Women Cell",
-        url: "/Facilities/WomanCell",
+        url: "/Facilities/WomanCell",  // This is already correct
         icon: <Women size={20} />,
       },
-      { name: "SC/ST Cell", url: "/Facilities/SCST", icon: <SCST size={20} /> },
+      { 
+        name: "SC/ST Cell", 
+        url: "/Facilities/SCST",  // This is already correct
+        icon: <SCST size={20} /> 
+      },
       {
         name: "Student Activity Center",
-        url: "/Student/SAC",
+        url: "/students/SAC",  // Changed from "/Student/SAC"
         icon: <Sac size={20} />,
       },
-      { name: "Tech Fest", url: "/Student/TechFest", icon: <Fest size={20} /> },
-      { name: "NSS@NITP", url: "/Student/NSS", icon: <NSS size={20} /> },
-      { name: "E-Cell", url: "/Student/E-Cell", icon: <Ecell size={20} /> },
+      { 
+        name: "Tech Fest", 
+        url: "/students/TechFest",  // Changed from "/Student/TechFest"
+        icon: <Fest size={20} /> 
+      },
+      { 
+        name: "NSS@NITP", 
+        url: "/students/NSS",  // Changed from "/Student/NSS"
+        icon: <NSS size={20} /> 
+      },
+      { 
+        name: "E-Cell", 
+        url: "/students/E-Cell",  // Changed from "/Student/E-Cell"
+        icon: <Ecell size={20} /> 
+      },
       {
         name: "Unnat Bharat",
-        url: "/Student/UnnatBharat",
+        url: "/students/UnnatBharat",  // Changed from "/Student/UnnatBharat"
         icon: <Bharat size={20} />,
       },
       {
         name: "Student Academic Portal",
-        url: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",
+        url: "http://exam.nitp.ac.in:9001/default.aspx?ReturnUrl=%2f",  // This is already correct
         icon: <Chankaya size={20} />,
       },
     ],
