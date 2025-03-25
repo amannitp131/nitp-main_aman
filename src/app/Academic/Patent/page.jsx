@@ -61,8 +61,8 @@ function Page() {
           <button
             className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
               publish
-                ? "bg-red-900 text-white hover:bg-red-700"
-                : "border border-red-900 text-red-900 hover:bg-red-50"
+                ? "bg-red-700 text-white hover:bg-red-700"
+                : "border border-red-700 text-red-700 hover:bg-red-50"
             }`}
             onClick={() => {
               fetchData('published.xlsx');
@@ -75,8 +75,8 @@ function Page() {
           <button
             className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
               grant
-                ? "bg-red-900 text-white hover:bg-red-700"
-                : "border border-red-900 text-red-900 hover:bg-red-50"
+                ? "bg-red-700 text-white hover:bg-red-700"
+                : "border border-red-700 text-red-900 hover:bg-red-50"
             }`}
             onClick={() => {
               fetchData('granted.xlsx');
@@ -93,7 +93,7 @@ function Page() {
             <div className="overflow-x-auto max-h-[600px]">
               <table className="w-full border-collapse bg-white">
                 <thead className="sticky top-0 z-10">
-                  <tr className="bg-[#421010] text-white">
+                  <tr className="bg-red-700 text-white">
                     {columns.map((col, index) => (
                       <th key={index} className="text-left px-6 py-4 font-semibold">
                         {col}
