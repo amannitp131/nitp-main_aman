@@ -72,7 +72,6 @@ const DocumentsTable = () => {
 
       para:
         "8-Format of Application for Fee Receipt for Bank Loan and DRCC Adjustment Only",
-
       link:
         "https://drive.google.com/file/d/1XHKMmDhheGwL67m-q42FqPMAU-a4X0Hu/view?usp=sharing",
     },
@@ -186,7 +185,6 @@ const DocumentsTable = () => {
       </div>
     </>
   );
-
   const DualDownloadTable = ({ data, title }) => (
     <>
       {title && (
