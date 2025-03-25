@@ -1,26 +1,41 @@
-import React, { Children } from 'react';
-import DeptNavbar from "@/components/department/DeptNavbar";
-import DepartmentSidebar from '@/components/department/DeptSidebar';
+import React from "react";
+import DeptSidebar from "@/components/department/DeptSidebar";
+import { Topbar, Middle, BottomNav } from "@/components/navbar";
+import Footer from "@/components/footer";
+import Imagefooter from "@/components/Imagefooter";
+import { Suspense } from "react";
+import { LoadingSpinner } from "@/components/loadingSpinner";
+import ErrorBoundary from "@/components/errorBoundary";
 
 export default function CSELayout({ children }) {
-    return (
-        <html lang="en">
-            <body
-                className={``}
-            >
-                <div className='flex shrink-0'>
-                    {/* <DeptNavbar dept="CSE" /> */}
-                    <div>
-                        <DepartmentSidebar dept="CSE" />
-                    </div>
-                    <div className='flex flex-col flex-1 overflow-auto'>
-                        <h2 className="text-center px-2 text-4xl lg:text-5xl mt-2 text-red-700 uppercase">
-                            Computer Science And Engineering
-                        </h2>
-                        {children}
-                    </div>
-                </div>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body className="relative">
+
+        {/* Sidebar Button Below BottomNav */}
+        <div className="relative md:hidden flex justify-start">
+          <DeptSidebar dept="CSE" />
+        </div>
+
+        <div className="flex min-h-screen">
+          {/* Sidebar (Visible in Desktop) */}
+          <DeptSidebar dept="CSE" />
+
+          {/* Main Content */}
+          <div className="flex-1 overflow-auto p-4">
+            <h2 className="text-center px-2 text-4xl lg:text-5xl mt-2 text-red-700 uppercase">
+              Computer Science And Engineering
+            </h2>
+            <ErrorBoundary>
+              <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
+            </ErrorBoundary>
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <Imagefooter />
+        <Footer />
+      </body>
+    </html>
+  );
 }

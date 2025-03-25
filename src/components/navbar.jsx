@@ -44,7 +44,7 @@ export const Topbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center bg-black text-white w-full py-2 px-4 md:px-6">
+    <div className="flex justify-between items-center bg-black text-white w-full py-1 px-4 md:px-6">
       <div className="flex space-x-2 md:text-sm text-xs">
         {rightSide.map((item, index) => (
           <Link
@@ -93,8 +93,8 @@ export const Middle = () => {
 
   return (
     <header
-      className={`sticky top-0 w-full transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-white/60" : "bg-white"
+      className={`sticky top-0 w-full transition-all duration-300 backdrop-blur-2xl ${
+        isScrolled ? "backdrop-blur-xl bg-white/60" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-1">
@@ -123,7 +123,7 @@ export const Middle = () => {
 
         {/* laptop */}
         <div
-          className={`hidden md:flex items-center justify-between w-full transition-all duration-500 ease-in-out
+          className={`hidden md:flex items-center justify-between w-full transition-all duration-500 ease-in-out 
     ${isScrolled ? "h-16" : "h-24"}`}
         >
           {/* Left Content */}
@@ -182,11 +182,11 @@ export const BottomNav = () => {
   return (
     <>
       <nav
-        className={`bg-red-700 text-white backdrop-blur-xl xl:px-6 ${
+        className={`bg-red-700 text-white xl:px-6 ${
           isScrolled
-            ? "py-1 transition-transform duration-500"
+            ? "py-1 transition-transform duration-500 "
             : "py-2 transition-transform duration-500"
-        } md:flex hidden md:gap-0 xl:gap-6 items-center justify-evenly w-full shadow-lg backdrop-filter transition duration-300`}
+        } md:flex hidden md:gap-0 xl:gap-6 items-center justify-evenly transition duration-300 ease-in-out w-full`}
       >
         {navItems.map((item, index) =>
           item.dropdown ? (

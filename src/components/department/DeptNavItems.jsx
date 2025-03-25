@@ -65,6 +65,9 @@ import {
   Gavel,
   ListChecks,
   BarChart,
+  GraduationCap,
+  Activity,
+  ActivityIcon,
 } from "lucide-react";
 
 const getNavItems = (dept) => {
@@ -157,93 +160,24 @@ const getNavItems = (dept) => {
       ],
     },
     {
-      name: "Academics",
-      icon: <Award size={18} />,
-      url: "#",
-      dropdown: [
-        {
-          name: "B.Tech",
-          url: `/Department/${dept}/B.Tech`,
-          icon: <Scroll size={18} />,
-        },
-        {
-          name: "M.Tech",
-          url: `/Department/${dept}/M.Tech`,
-          icon: <FileText size={18} />,
-        },
-        {
-          name: "Dual Degree",
-          url: `/Department/${dept}/DualDegree`,
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Ph.D.",
-          url: `/Department/${dept}/Ph.D.`,
-          icon: <Building size={18} />,
-        },
-      ],
+      name: "Syallabus",
+      icon: <GraduationCap size={18} />,
+      url: `/Department/${dept}/Syllabus`,
     },
     {
-      name: "All Departments",
-      icon: <Landmark size={18} />,
-      url: "#",
-      dropdown: [
-        {
-          name: "Applied Physics and Materials Engineering",
-          url: "/Department/Phy",
-          icon: <Scroll size={18} />,
-        },
-        {
-          name: "Architecture & Planning",
-          url: "/Department/Archi",
-          icon: <FileText size={18} />,
-        },
-        {
-          name: "Chemical Science and Technology",
-          url: "/Department/Chem",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Civil Engineering",
-          url: "/Department/CE",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Computer Science And Engineering",
-          url: "/Department/CSE",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Electrical Engineering",
-          url: "/Department/EE",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Electronics And Communication Engineering",
-          url: "/Department/ECE",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Humanities And Social Science",
-          url: "/Department/Humanities",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Mathematics And Communication Technology",
-          url: "/Department/Math",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Mechanical Engineering",
-          url: "/Department/ME",
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Mechatronics And Automation Engineering",
-          url: "/Department/Mechatronics",
-          icon: <Building size={18} />,
-        },
-      ],
+      name: "Achievement",
+      icon: <Award size={18} />,
+      url: `/Department/${dept}/Achievement`,
+    },
+    {
+      name: "Labs",
+      icon: <Labs size={18} />,
+      url: `/Department/${dept}/Lab`,
+    },
+    {
+      name: "Activities",
+      icon: <ActivityIcon size={18} />,
+      url: `/Department/${dept}/Activity`,
     },
   ];
 };
