@@ -1,28 +1,19 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserGraduate, faGlobe, faBoxArchive, faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
 import Admissions from "./Admission";
-
 import './style.css';
 
-
 export default function InstitutePage() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const initialTab = searchParams.get('tab') || 'SII';
-  const [activeSection, setActiveSection] = useState(initialTab);
+  const [activeSection, setActiveSection] = useState('SII');
 
   useEffect(() => {
-    const tab = searchParams.get('tab');
-    if (tab && tab !== activeSection) {
-      setActiveSection(tab);
-    }
-  }, [searchParams]);
+    const urlParams = new URLSearchParams(window.location.search);
+    const tab = urlParams.get('tab') || 'SII';
+    setActiveSection(tab);
+  }, []);
 
   const handleNavigation = (section) => {
     setActiveSection(section);
@@ -36,7 +27,7 @@ export default function InstitutePage() {
   };
 
   return (
-    <div className="flex flex-col  bg-white bg-opacity-70 maincont1">
+    <div className="flex flex-col bg-white bg-opacity-70 maincont1">
       <header className="bg-primary text-primary-foreground px-4 lg:px-5 h-14 flex items-center justify-between">
         <div className="bottonconatiner">
           <div className="containeripi">
@@ -44,8 +35,8 @@ export default function InstitutePage() {
               className={`cardacad cardacad1 ${activeSection === 'SII' ? 'active' : ''}`}
               onClick={() => handleNavigation('SII')}
               style={{ backgroundColor: activeSection === 'SII' ? 'white' : 'initial' }}
-            ><FontAwesomeIcon icon={faGlobe} size="2x" color='#d62a39' />
-
+            >
+              <FontAwesomeIcon icon={faGlobe} size="2x" color='#d62a39' />
               <p className="heading">SII</p>
             </div>
             <div
@@ -56,20 +47,18 @@ export default function InstitutePage() {
               <FontAwesomeIcon icon={faUserGraduate} size="2x" color='#d62a39' />
               <p className="heading">Admission</p>
             </div>
-
           </div>
         </div>
       </header>
+
       <div className='detailcontainer'>
         <div className="flex-1 flex justify-center items-center">
           {activeSection === 'SII' && (
-            <section className=" text-black">
-
+            <section className="text-black">
               <div className="admission-info">
-                <h1 className="section-title-heading text-red-800 " >Admission in UG/PG/PhD programme through Study In India (SII)</h1>
-                <h2 className="section-title text-red-950">Admission Requirements</h2>
-
-
+                <h1 className="section-title-heading text-red-800">
+                  Admission in UG/PG/PhD programme through Study In India (SII)
+                </h1>
 
                 <div className="requirements-container">
                   <div className="requirement">
@@ -138,15 +127,20 @@ export default function InstitutePage() {
                     </tr>
                   </tbody>
                 </table>
+
                 <div className='flex mt-4'>
                   <h1 className='mt-4 ml-16 font-bold'>International Student Registration -</h1>
-                  <a href="https://www.studyinindia.gov.in/admission/registrations " className="  text-red-700 font-bold py-2 px-4 rounded-lg shadow-md  ml-5 mt-2 mb-3">
+                  <a
+                    href="https://www.studyinindia.gov.in/admission/registrations"
+                    className="text-red-700 font-bold py-2 px-4 rounded-lg shadow-md ml-5 mt-2 mb-3"
+                  >
                     Click Here
                   </a>
                 </div>
               </div>
             </section>
           )}
+
           {activeSection === 'JoSAA' && (
             <section className="w-full max-w-7xl mx-auto px-4 py-8">
               <div className="bg-white rounded-lg shadow-md">
@@ -171,17 +165,12 @@ export default function InstitutePage() {
                             <div className="flex-1 flex items-start gap-4">
                               <p className="text-gray-700">{content}</p>
                               {item.link && (
-                                <a 
-                                  href={item.link} 
-                                  target="_blank" 
+                                <a
+                                  href={item.link}
+                                  target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-flex items-center gap-2 bg-red-900 text-white px-4 py-1 rounded-md hover:bg-red-800 transition-colors text-sm font-medium whitespace-nowrap"
                                 >
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                    <polyline points="7 10 12 15 17 10"/>
-                                    <line x1="12" y1="15" x2="12" y2="3"/>
-                                  </svg>
                                   View Details
                                 </a>
                               )}
@@ -195,11 +184,8 @@ export default function InstitutePage() {
               </div>
             </section>
           )}
-
-          
         </div>
       </div>
-
     </div>
   );
 }
