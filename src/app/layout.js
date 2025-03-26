@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         className={``}
       >
         <Topbar />
-        <div className="sticky top-0 shadow-md z-[100]">
+        <div className="sticky top-0 z-[100]">
           <Middle />
           <BottomNav />
         </div>
