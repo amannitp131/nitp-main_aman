@@ -160,31 +160,9 @@ const getNavItems = (dept) => {
       ],
     },
     {
-      name: "Academics",
+      name: "Syallabus",
       icon: <GraduationCap size={18} />,
-      url: "#",
-      dropdown: [
-        {
-          name: "B.Tech",
-          url: `/Department/${dept}/B.Tech`,
-          icon: <Scroll size={18} />,
-        },
-        {
-          name: "M.Tech",
-          url: `/Department/${dept}/M.Tech`,
-          icon: <FileText size={18} />,
-        },
-        {
-          name: "Dual Degree",
-          url: `/Department/${dept}/DualDegree`,
-          icon: <Building size={18} />,
-        },
-        {
-          name: "Ph.D.",
-          url: `/Department/${dept}/Ph.D.`,
-          icon: <Building size={18} />,
-        },
-      ],
+      url: `/Department/${dept}/Syllabus`,
     },
     {
       name: "Achievement",

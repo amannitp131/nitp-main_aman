@@ -9,6 +9,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { IoIosArrowDown, IoIosArrowDropright } from "react-icons/io";
 import "@/components/styles/navbar.css";
+import NewDropdown from "./landing/newDropdown";
 
 export const Topbar = () => {
   const rightSide = [
@@ -44,13 +45,13 @@ export const Topbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center bg-black text-white w-full py-2 px-4 md:px-6">
-      <div className="flex space-x-2 md:text-sm text-xs">
+    <div className="flex justify-between items-center bg-black/80  text-white w-full py-1 px-4 md:px-6">
+      <div className="flex space-x-2 md:text-sm text-xs gap-3">
         {rightSide.map((item, index) => (
           <Link
             key={index}
             href={item.href}
-            className="hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out ring-1 ring-gray-300/50 shadow-md md:shadow-lg py-1 px-1 md:px-4 md:py-1 text-xs md:text-sm rounded-xl bg-gradient-to-b from-gray-100/20 to-gray-800/30 backdrop-blur-md"
+            className="text-white hover:underline hover:underline-offset-2 font-semibold"
           >
             {item.text}
           </Link>
@@ -93,8 +94,8 @@ export const Middle = () => {
 
   return (
     <header
-      className={`sticky top-0 w-full transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg bg-white/60" : "bg-white"
+      className={` w-full transition-all duration-300 backdrop-blur-2xl ${
+        isScrolled ? "backdrop-blur-xl bg-white/60" : "bg-white/80"
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-1">
@@ -106,7 +107,7 @@ export const Middle = () => {
               alt="NIT PATNA"
               width={50}
               height={50}
-              className={`transition-transform duration-500 ${
+              className={`transition-transform duration-500  ${
                 isScrolled ? "scale-80" : "scale-100"
               }`}
             />
@@ -123,7 +124,7 @@ export const Middle = () => {
 
         {/* laptop */}
         <div
-          className={`hidden md:flex items-center justify-between w-full transition-all duration-500 ease-in-out
+          className={`hidden md:flex items-center justify-between w-full transition-all duration-500 ease-in-out 
     ${isScrolled ? "h-16" : "h-24"}`}
         >
           {/* Left Content */}
@@ -169,7 +170,7 @@ export const BottomNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -182,15 +183,15 @@ export const BottomNav = () => {
   return (
     <>
       <nav
-        className={`bg-red-700 text-white backdrop-blur-xl xl:px-6 ${
+        className={`bg-red-700 backdrop-blur-xl text-white xl:px-6 ${
           isScrolled
             ? "py-1 transition-transform duration-500"
-            : "py-2 transition-transform duration-500"
-        } md:flex hidden md:gap-0 xl:gap-6 items-center justify-evenly w-full shadow-lg backdrop-filter transition duration-300`}
+            : "py-2 transition-transform duration-500 w-full"
+        } md:flex hidden md:gap-0 xl:gap-6 items-center justify-evenly transition duration-300 ease-in-out  mx-auto w-full`}
       >
         {navItems.map((item, index) =>
           item.dropdown ? (
-            <Dropdown
+            <NewDropdown
               key={index}
               title={item.name}
               items={item.dropdown}
@@ -225,6 +226,7 @@ export const BottomNav = () => {
             <X size={28} />
           </button>
         </div>
+
 
         <div className="flex flex-col gap-2 px-6">
           {navItems.map((item, index) =>
@@ -453,7 +455,7 @@ export const Dropdown = ({ title, items, icon, mobile = false }) => {
                     ref={subDropdownRef}
                     className={`absolute top-full left-0 w-[200px] bg-white shadow-lg border border-gray-200 z-50 rounded-lg transition-all duration-300 opacity-100 scale-100 max-h-[30vh] overflow-y-auto`}
                   >
-                    <div className="py-2">
+                    <div className="py-2 absolute">
                       {item.dropdown.map((dlr, i) => (
                         <Link
                           key={i}

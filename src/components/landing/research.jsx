@@ -182,9 +182,9 @@ function Research() {
         )} */}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[80vw] mx-auto">
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-300">
-          <h2 className="text-xl font-bold text-[#421010] mb-4">Recent Publications</h2>
-          <div className="h-[55vh] overflow-y-auto space-y-4" ref={publicationRef} onMouseEnter={handleMouseEnterPublications} onMouseLeave={handleMouseLeavePublications}>
+        <div className="bg-white rounded-lg shadow-md border border-gray-300 rounded-t-xl">
+          <h2 className="text-xl font-bold text-white py-4 px-2 text-center bg-red-800 mb-4 rounded-t-xl">Recent Publications</h2>
+          <div className="h-[55vh] overflow-y-auto space-y-4 p-6" ref={publicationRef} onMouseEnter={handleMouseEnterPublications} onMouseLeave={handleMouseLeavePublications}>
             {recentPublications.length > 0 ? (
               recentPublications.map((publication, index) => (
                 <PublicationCard
@@ -202,9 +202,9 @@ function Research() {
             )}
           </div>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-300">
-          <h2 className="text-xl font-bold text-[#421010] mb-4">Recent Projects</h2>
-          <div className="h-[55vh] overflow-y-auto grid gap-4" ref={projectsRef} onMouseLeave={handleMouseLeaveProjects} onMouseEnter={handleMouseEnterProjects}>
+        <div className="bg-white rounded-lg shadow-md border border-gray-300 rounded-t-xl">
+          <h2 className="text-xl font-bold text-white py-4 px-2 text-center bg-red-800 mb-4 rounded-t-xl">Recent Projects</h2>
+          <div className="h-[55vh] overflow-y-auto p-6 grid gap-4" ref={projectsRef} onMouseLeave={handleMouseLeaveProjects} onMouseEnter={handleMouseEnterProjects}>
             {recentProjects.length > 0 ? (
               recentProjects.map((project, index) => (
                 <ProjectCard
@@ -230,7 +230,7 @@ export default Research;
 
 function StatCard({ title, icon, value, counterOn }) {
   return (
-    <div className="bg-red-700 rounded-lg p-4 flex flex-col items-center border border-red-700 shadow-md hover:shadow-lg transition-all">
+    <div className="bg-gradient-to-br from-rose-800 to-red-700 backdrop-blur-2xl rounded-lg p-4 flex flex-col items-center border border-red-700 shadow-md hover:shadow-lg transition-all">
       {icon}
       <h3 className="text-sm font-semibold mt-1.5 text-white">{title}</h3>
       <span className="text-lg font-bold text-white md:text-xl">

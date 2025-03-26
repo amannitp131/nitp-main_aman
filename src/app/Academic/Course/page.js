@@ -9,8 +9,8 @@ export default function Page() {
         <div>
             <div className="my-10 mx-2 flex space-x-1 overflow-x-auto">
                 <div className="min-w-[800px] w-full flex flex-col text-sm lg:text-base">
-                    <div class=" items-center justify-center mx-auto">
-                        <h1 class="text-4xl font-bold text-center">All Courses</h1>
+                    <div className=" items-center justify-center mx-auto">
+                        <h1 className="text-4xl font-bold text-center">All Courses</h1>
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
                         <button onClick={() => {

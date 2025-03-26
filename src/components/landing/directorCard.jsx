@@ -22,7 +22,7 @@ function DirectorCard() {
       }, []);
 
   return (
-    <div className="flex flex-col md:flex-row ring-2 ring-gray-700 bg-black/40 backdrop-blur-xl text-white rounded-2xl shadow-xl max-w-4xl mx-auto md:p-6">
+    <div className="flex flex-col md:flex-row ring-2 ring-gray-700 bg-black/40 backdrop-blur-sm text-white rounded-2xl shadow-xl max-w-4xl mx-auto md:p-6">
       <div className="flex flex-col items-center text-center md:w-1/3 border-r border-gray-600 p-6">
         <Image
           src="/PkJain.jpg"
