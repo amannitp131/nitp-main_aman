@@ -24,11 +24,11 @@ export function SocialHandles() {
   useEffect(() => {
     AOS.init({ duration: 800, once: false, offset: 50 });
 
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    script.charset = "utf-8";
-    document.body.appendChild(script);
+    // const script = document.createElement("script");
+    // script.src = "https://platform.twitter.com/widgets.js";
+    // script.async = true;
+    // script.charset = "utf-8";
+    // document.body.appendChild(script);
 
     const handleKeyDown = (e) => {
       if (!popupImage) return;
@@ -68,32 +68,11 @@ export function SocialHandles() {
   }, [currentIndex]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-5 md:p-20 h-full">
-      <div className="w-full md:w-2/5 bg-white p-6 border rounded-md dark:border-gray-800 shadow-lg overflow-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">View our Social Media</h2>
-        <div className="flex flex-col gap-4">
-          <a
-            className="twitter-timeline"
-            data-lang="en"
-            data-height="350"
-            href="https://twitter.com/NITPatna1?ref_src=twsrc%5Etfw"
-          >
-            Tweets by NIT Patna
-          </a>
-          <a
-            className="twitter-timeline"
-            data-lang="en"
-            data-height="350"
-            href="https://twitter.com/EduMinOfIndia?ref_src=twsrc%5Etfw"
-          >
-            Tweets by Education Ministry Of India
-          </a>
-        </div>
-      </div>
+    <>
       <div className="w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">NIT Patna Glimpses</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
-          {images.slice(0, 6).map((image, index) => (
+        {/* <h2 className="text-2xl font-bold mb-6 text-center">NIT Patna Glimpses</h2> */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4 justify-center items-center">
+          {images.slice(0, 7).map((image, index) => (
             <div
               key={index}
               className="relative overflow-hidden rounded-lg group aspect-[4/3] shadow-md"
@@ -104,14 +83,14 @@ export function SocialHandles() {
                 alt={`Gallery Image ${index + 1}`}
                 className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <button
                   onClick={() => openPopup(index)}
                   className="text-white font-medium px-4 py-2 bg-gray-900 rounded-lg"
                 >
                   View Image
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -170,11 +149,23 @@ export function SocialHandles() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
 export default SocialHandles;
 function GalleryThumbnailsIcon(props) {
-  return <span {...props}>🖼️</span>;
+  return (
+    <svg 
+      {...props}
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M4 4H20V16H4V4ZM2 4C2 2.89543 2.89543 2 4 2H20C21.1046 2 22 2.89543 22 4V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V4ZM4 20H20V22H4V20Z" 
+        fill="currentColor"
+      />
+    </svg>
+  )
 }
