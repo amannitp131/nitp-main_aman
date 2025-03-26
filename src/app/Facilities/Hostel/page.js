@@ -1,11 +1,11 @@
 "use client"
 import React from 'react';
 import { Building2, UtensilsCrossed, ScrollText, Home } from 'lucide-react';
-import HostelList from '@/components/hostellist';
-import MessSchedule from '@/components/messschedule';
-import Rules from '@/components/rules';
-import AllotmentDetails from '@/components/allotmentdetails';
-import HostelMap from '@/components/hostelmap';
+import HostelList from './components/hostellist';
+import MessSchedule from './components/messschedule';
+import Rules from './components/rules';
+import AllotmentDetails from './components/allotmentdetails';
+// import HostelMap from '@/components/hostelmap';
 export default function Homepage() {
   const [activeTab, setActiveTab] = React.useState('hostels');
 
